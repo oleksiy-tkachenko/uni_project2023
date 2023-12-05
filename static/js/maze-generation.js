@@ -10,13 +10,13 @@ ${cell.cellborders[2] ? "border-right: 1px;\n": ""}${cell.cellborders[3] ? "bord
 }
 function ControlEvent(e) {
     switch(e.code) {
-        case "KeyW": hero.Move("up", cellArray); break;
-        case "KeyS": hero.Move("down", cellArray); break;
-        case "KeyA": hero.Move("left", cellArray); break;
-        case "KeyD": hero.Move("right", cellArray   ); break;
+        case "KeyW":
         case "ArrowUp": hero.Move("up", cellArray); break;
+        case "KeyS":
         case "ArrowDown": hero.Move("down", cellArray); break;
+        case "KeyA":
         case "ArrowLeft": hero.Move("left", cellArray); break;
+        case "KeyD":
         case "ArrowRight": hero.Move("right", cellArray); break;
     }
 }

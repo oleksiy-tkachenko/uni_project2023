@@ -144,6 +144,7 @@ function SkillCheck(){
             console.log(pressSize)
             if(pressSize <= 18 && pressSize >= 13){
                 document.getElementById("rhytm-circle").style.borderColor = "green";
+                lives = `${Number(document.getElementById("lives").innerText)}`
             } else {
                 document.getElementById("rhytm-circle").style.borderColor = "red";
                 lives = `${Number(document.getElementById("lives").innerText)-1}`
