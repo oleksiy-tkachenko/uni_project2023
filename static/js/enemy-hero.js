@@ -1,4 +1,5 @@
 let lives;
+let pressSize;
 class Hero{
     constructor(_currentCell, _mazeSize) {
         this._currentCell = _currentCell
@@ -133,17 +134,15 @@ let checkPadding;
 
 
 function SkillCheck(){
-    startTime = Date.now()
-    pressTime= Date.now()
+    pressSize = 48.4
     document.addEventListener('keydown', FightControl)
     let aboba = setInterval(function battleShrink(){
         checkPadding -= 0.7
         if(checkPadding<=1){
             document.getElementById("rhytm-check").style.visibility="hidden";
             clearInterval(aboba)
-            let finalTime = pressTime - startTime;
-            console.log(finalTime)
-            if(finalTime <= 1600 && finalTime >=1300){
+            console.log(pressSize)
+            if(pressSize <= 18 && pressSize >= 13){
                 document.getElementById("rhytm-circle").style.borderColor = "green";
             } else {
                 document.getElementById("rhytm-circle").style.borderColor = "red";

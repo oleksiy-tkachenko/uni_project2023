@@ -14,11 +14,15 @@ function ControlEvent(e) {
         case "KeyS": hero.Move("down", cellArray); break;
         case "KeyA": hero.Move("left", cellArray); break;
         case "KeyD": hero.Move("right", cellArray   ); break;
+        case "ArrowUp": hero.Move("up", cellArray); break;
+        case "ArrowDown": hero.Move("down", cellArray); break;
+        case "ArrowLeft": hero.Move("left", cellArray); break;
+        case "ArrowRight": hero.Move("right", cellArray); break;
     }
 }
 function FightControl(e) {
     switch (e.code){
-        case "KeyZ": pressTime = Date.now();document.removeEventListener('keydown', FightControl); break;
+        case "KeyZ": pressSize = Number(document.getElementById("rhytm-check").style.padding.replace("%", ""));document.removeEventListener('keydown', FightControl); break;
     }
 }
 class Cell{
@@ -242,7 +246,6 @@ function SpawnMonster(cellArray,currentCell, mazeSize, _exitCell){
         document.getElementById(`cell${cellIndex}`).innerHTML += `<div style="color: red;"id="monster${cellIndex}" class="${monsterID}">M</div>`;
         monsterArray.push(new Monster(currentCell, mazeSize, monsterID))
         monsterArray[monsterID].intervalID = setInterval(monsterArray[monsterID].Move.bind(monsterArray[monsterID]), 1000, cellArray)
-        console.log(monsterArray[monsterID].currentCell)
         monsterID++; 
         chanceToSpawn = 5;
     } else {
