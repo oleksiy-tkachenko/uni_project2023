@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="static/css/page.css">
+    </head>
+    <body id="body">
+        <div id="overlay"></div>
+        <div id="winMsg"><b>Congratulations!</b><br><br><br>
+            
+            <button id="again-button" onclick="Restart()">Try again?</button>
+        </div>
+        <div id="loseMsg"><b>Hero died! :(</b><br><br><br>
+            
+            <button id="again-button" onclick="Restart()">Try again?</button>
+        </div>
+        <div id="battleScreen" style="visibility: hidden;">
+            <div id="rhytm-circle">Z</div>
+            <div id="rhytm-check" style="padding: 48.4%;"></div>
+        </div>
+        <select id="mazeSizeOptions">
+            <option value="5">5x5</option>
+            <option value="10" selected>10x10</option>
+            <option value="15">15x15</option>
+        </select>
+        <button style="padding: 50px" onclick="GenerateMaze()">prik</button>
+        <div class="game-board" id="gameboard">
+        </div>
+        <div id="lives"></div>
+    </body>
+</html>
+<script type="text/javascript" src="static/js/main.js"></script>
+<script type="text/javascript" src="static/js/enemy-hero.js"></script>
+<script type="text/javascript" src="static/js/maze-generation.js"></script>
